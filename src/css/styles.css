@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -12,27 +8,8 @@ body {
   line-height: 1.5;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  border: 1px solid #0d161b;
-}
-
 h1 {
   margin: 0;
-}
-
-.is-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .breed-select {
@@ -41,15 +18,48 @@ h1 {
   margin: auto;
 }
 
+.breed-name {
+  text-align: left;
+  margin-top: 0;
+}
+
+.breed-img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid #0d161b;
+}
+
+.cat-info-box {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.cat-text-box {
+  width: 400px;
+}
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 .loader {
   font-size: 0;
-  position: relative;
+
   margin: 20% auto;
   width: 250px;
   display: flex;
   justify-content: space-between;
 }
-
 .loader::after,
 .loader::before {
   content: '';
@@ -64,6 +74,20 @@ h1 {
   animation: eyeMove 10s infinite, blink 10s infinite;
 }
 
+.error {
+  margin-top: 30px;
+  display: none;
+  color: red;
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(360deg);
+  }
+}
 @keyframes eyeMove {
   0%,
   10% {
@@ -119,21 +143,4 @@ h1 {
   99% {
     height: 18px;
   }
-}
-
-.cat-info {
-  margin-top: 20px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.box-img {
-  display: flex;
-  align-items: center;
-}
-
-.box {
-  width: 400px;
 }
